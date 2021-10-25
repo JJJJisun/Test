@@ -12,4 +12,5 @@
     <string name="join_id">사용하실 이메일을 입력해주세요.</string>
     <string name="join_pw">사용하실 비밀번호를 입력해주세요.</string>
     <string name="join_name">성함을 입력해주세요.</string>
+    <string name="check_pw">비밀번호 확인</string>
 </resources>
