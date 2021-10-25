@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.jjjjisun.test.databinding.ActivityJoinBinding
@@ -55,33 +56,24 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 
 			}
 		})
-	}
-	fun checkEmail(): Boolean {
-		var email = binding.joinId.text.toString().trim() // trim: 문자열의 양쪽 공백을 없애주는 것
-		val pattern = Pattern.matches(emailValidation, email)
-		if (pattern) {
-			binding.joinId.setTextColor(R.color.black.toInt())
-			binding.errorEmail.visibility = View.GONE
-			return true
-		} else {
-			binding.joinId.setTextColor(-65536)
-			binding.errorEmail.visibility = View.VISIBLE
-			return false
-		}
-	}
 
+		binding.joinCheckPw.addTextChangedListener(object : TextWatcher{
+			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
+			}
 
-	fun checkPasswd() : Boolean{
-		var passwd = binding.joinPw.text.toString().trim()
-		val pattern = Pattern.matches(passwdValidation, passwd)
-		if (pattern){
-			binding.errorPw.visibility = View.GONE
-			return true
-		}else{
-			binding.errorPw.visibility = View.VISIBLE
-			return false
-		}
+			override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+				if(binding.joinPw.text.toString() == binding.joinCheckPw.text.toString()){
+					binding.errorCheckPw.visibility = View.GONE
+				}else{
+					binding.errorCheckPw.visibility = View.VISIBLE
+				}
+			}
+
+			override fun afterTextChanged(s: Editable?) {
+
+			}
+		})
 	}
 
 	override fun onClick(v: View?) {
@@ -111,6 +103,34 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 				binding.joinPw.setBackgroundResource(R.drawable.join_nonclick)
 				binding.joinCheckPw.setBackgroundResource(R.drawable.join_click)
 			}
+		}
+	}
+	fun checkEmail(): Boolean {
+		var email = binding.joinId.text.toString().trim() // trim: 문자열의 양쪽 공백을 없애주는 것
+		val pattern = Pattern.matches(emailValidation, email)
+		if (pattern) {
+			binding.joinId.setTextColor(R.color.black.toInt())
+			binding.errorEmail.visibility = View.GONE
+			return true
+		} else {
+			binding.joinId.setTextColor(-65536)
+			binding.errorEmail.visibility = View.VISIBLE
+
+			return false
+		}
+	}
+
+
+	fun checkPasswd() : Boolean{
+		var passwd = binding.joinPw.text.toString().trim()
+		val pattern = Pattern.matches(passwdValidation, passwd)
+		if (pattern){
+			binding.errorPw.visibility = View.GONE
+			return true
+		}else{
+			binding.errorPw.visibility = View.VISIBLE
+
+			return false
 		}
 	}
 }

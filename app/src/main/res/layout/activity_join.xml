@@ -88,9 +88,9 @@
         android:text="@string/passwd_check_error"
         android:layout_margin="16dp"
         android:paddingLeft="10dp"
+        android:visibility="gone"
         android:textColor="@color/error"
         app:layout_constraintTop_toBottomOf="@id/join_check_pw"
-        android:visibility="gone"
         android:id="@+id/error_check_pw"/>
 
     <Button
@@ -103,6 +103,6 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:background="@drawable/join_click"
-        app:layout_constraintTop_toBottomOf="@id/join_check_pw"
+        app:layout_constraintTop_toBottomOf="@id/error_check_pw"
         android:id="@+id/signup_btn"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
