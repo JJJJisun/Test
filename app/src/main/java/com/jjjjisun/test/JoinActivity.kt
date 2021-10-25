@@ -25,12 +25,16 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 		binding.joinPw.setOnClickListener(this)
 		binding.joinCheckPw.setOnClickListener(this)
 
-
 		binding.signupBtn.setOnClickListener {
-			finish()
+			if (binding.joinName.text.toString() == ""){
+				Toast.makeText(this, "이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
+			}else{
+				finish()
+			}
 		}
 
-		binding.joinId.addTextChangedListener(object : TextWatcher{
+
+		binding.joinId.addTextChangedListener(object : TextWatcher {
 			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
 			}
@@ -43,7 +47,7 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 
 			}
 		})
-		binding.joinPw.addTextChangedListener(object : TextWatcher{
+		binding.joinPw.addTextChangedListener(object : TextWatcher {
 			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
 			}
@@ -57,15 +61,15 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 			}
 		})
 
-		binding.joinCheckPw.addTextChangedListener(object : TextWatcher{
+		binding.joinCheckPw.addTextChangedListener(object : TextWatcher {
 			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
 			}
 
 			override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-				if(binding.joinPw.text.toString() == binding.joinCheckPw.text.toString()){
+				if (binding.joinPw.text.toString() == binding.joinCheckPw.text.toString()) {
 					binding.errorCheckPw.visibility = View.GONE
-				}else{
+				} else {
 					binding.errorCheckPw.visibility = View.VISIBLE
 				}
 			}
@@ -105,6 +109,7 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 			}
 		}
 	}
+
 	fun checkEmail(): Boolean {
 		var email = binding.joinId.text.toString().trim() // trim: 문자열의 양쪽 공백을 없애주는 것
 		val pattern = Pattern.matches(emailValidation, email)
@@ -115,19 +120,18 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 		} else {
 			binding.joinId.setTextColor(-65536)
 			binding.errorEmail.visibility = View.VISIBLE
-
 			return false
 		}
 	}
 
 
-	fun checkPasswd() : Boolean{
+	fun checkPasswd(): Boolean {
 		var passwd = binding.joinPw.text.toString().trim()
 		val pattern = Pattern.matches(passwdValidation, passwd)
-		if (pattern){
+		if (pattern) {
 			binding.errorPw.visibility = View.GONE
 			return true
-		}else{
+		} else {
 			binding.errorPw.visibility = View.VISIBLE
 
 			return false
