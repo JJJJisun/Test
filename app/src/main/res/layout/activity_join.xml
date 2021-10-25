@@ -36,6 +36,17 @@
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/join_name" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email_error"
+        android:layout_margin="16dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/error"
+        app:layout_constraintTop_toBottomOf="@id/join_id"
+        android:visibility="gone"
+        android:id="@+id/error_email"/>
+
     <EditText
         android:id="@+id/join_pw"
         android:layout_width="match_parent"
@@ -46,7 +57,18 @@
         android:paddingLeft="10dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/join_id" />
+        app:layout_constraintTop_toBottomOf="@id/error_email" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/passwd_error"
+        android:layout_margin="16dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/error"
+        app:layout_constraintTop_toBottomOf="@id/join_pw"
+        android:visibility="gone"
+        android:id="@+id/error_pw"/>
 
     <EditText
         android:id="@+id/join_check_pw"
@@ -58,7 +80,18 @@
         android:paddingLeft="10dp"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/join_pw" />
+        app:layout_constraintTop_toBottomOf="@id/error_pw" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/passwd_check_error"
+        android:layout_margin="16dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/error"
+        app:layout_constraintTop_toBottomOf="@id/join_check_pw"
+        android:visibility="gone"
+        android:id="@+id/error_check_pw"/>
 
     <Button
         android:layout_width="match_parent"

@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="id">#EAEAEA</color>
     <color name="join_color">#00D8FF</color>
+    <color name="error">#FF0000</color>
 </resources>

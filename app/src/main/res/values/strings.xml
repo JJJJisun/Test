@@ -14,4 +14,7 @@
     <string name="join_name">성함을 입력해주세요.</string>
     <string name="check_pw">비밀번호 확인</string>
     <string name="SignUp">회원가입</string>
+    <string name="email_error">이메일 형식이 맞지 않습니다.</string>
+    <string name="passwd_error">숫자,문자,특수문자 중 2가지를 포함하여 8자이상 15자이하로 작성하여 주세요.</string>
+    <string name="passwd_check_error">패스워드가 맞지 않습니다.</string>
 </resources>

@@ -3,29 +3,85 @@ package com.jjjjisun.test
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import com.jjjjisun.test.databinding.ActivityJoinBinding
+import java.util.regex.Pattern
 
 class JoinActivity : AppCompatActivity(), View.OnClickListener {
 
 	val binding by lazy { ActivityJoinBinding.inflate(layoutInflater) }
-
+	val emailValidation = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+	val passwdValidation = "^(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z!@#\$%^&*])(?=.*[0-9!@#\$%^&*]).{8,15}\$"
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
 
-		runOnUiThread {
-			binding.joinName.setOnClickListener(this)
-			binding.joinId.setOnClickListener(this)
-			binding.joinPw.setOnClickListener(this)
-			binding.joinCheckPw.setOnClickListener(this)
-		}
+		binding.joinName.setOnClickListener(this)
+		binding.joinId.setOnClickListener(this)
+		binding.joinPw.setOnClickListener(this)
+		binding.joinCheckPw.setOnClickListener(this)
+
 
 		binding.signupBtn.setOnClickListener {
 			finish()
 		}
 
+		binding.joinId.addTextChangedListener(object : TextWatcher{
+			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+			}
+
+			override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+				checkEmail()
+			}
+
+			override fun afterTextChanged(s: Editable?) {
+
+			}
+		})
+		binding.joinPw.addTextChangedListener(object : TextWatcher{
+			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+			}
+
+			override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+				checkPasswd()
+			}
+
+			override fun afterTextChanged(s: Editable?) {
+
+			}
+		})
+	}
+	fun checkEmail(): Boolean {
+		var email = binding.joinId.text.toString().trim() // trim: 문자열의 양쪽 공백을 없애주는 것
+		val pattern = Pattern.matches(emailValidation, email)
+		if (pattern) {
+			binding.joinId.setTextColor(R.color.black.toInt())
+			binding.errorEmail.visibility = View.GONE
+			return true
+		} else {
+			binding.joinId.setTextColor(-65536)
+			binding.errorEmail.visibility = View.VISIBLE
+			return false
+		}
+	}
+
+
+
+	fun checkPasswd() : Boolean{
+		var passwd = binding.joinPw.text.toString().trim()
+		val pattern = Pattern.matches(passwdValidation, passwd)
+		if (pattern){
+			binding.errorPw.visibility = View.GONE
+			return true
+		}else{
+			binding.errorPw.visibility = View.VISIBLE
+			return false
+		}
 	}
 
 	override fun onClick(v: View?) {
