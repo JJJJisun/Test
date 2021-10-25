@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="id">#EAEAEA</color>
+    <color name="join_color">#00D8FF</color>
 </resources>

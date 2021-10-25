@@ -15,43 +15,61 @@
     <EditText
         android:id="@+id/join_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="@drawable/input_id"
-        android:paddingLeft="10dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
         android:hint="@string/join_name"
-        android:textSize="25sp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/input_id"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/blank_view" />
 
     <EditText
         android:id="@+id/join_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/input_id"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
         android:hint="@string/join_id"
-        android:textSize="25sp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/input_id"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/join_name" />
 
     <EditText
         android:id="@+id/join_pw"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:paddingLeft="10dp"
-        android:background="@drawable/input_id"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
         android:hint="@string/join_pw"
-        android:textSize="25sp"
+        android:background="@drawable/input_id"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/join_id" />
+
     <EditText
         android:id="@+id/join_check_pw"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:paddingLeft="10dp"
+        android:layout_height="50dp"
         android:background="@drawable/input_id"
+        android:layout_margin="16dp"
         android:hint="@string/check_pw"
-        android:textSize="25sp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/join_pw" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/join_color"
+        android:text="@string/SignUp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="@drawable/join_click"
+        app:layout_constraintTop_toBottomOf="@id/join_check_pw"
+        android:id="@+id/signup_btn"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
