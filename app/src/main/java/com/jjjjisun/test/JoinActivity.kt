@@ -31,7 +31,11 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 			} else if (binding.joinPw.text.toString() == ""){
 				Toast.makeText(this, "패스워드를 입력해주세요.", Toast.LENGTH_SHORT).show()
 			}
-			else{
+			else if (binding.joinId.text.toString() == ""){
+				Toast.makeText(this, "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show()
+			}else if (binding.joinCheckPw.text.toString() == "") {
+				Toast.makeText(this, "패스워드를 확인해주세요.", Toast.LENGTH_SHORT).show()
+			}else{
 				finish()
 			}
 		}
@@ -39,7 +43,7 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 
 		binding.joinId.addTextChangedListener(object : TextWatcher {
 			override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
+7
 			}
 
 			override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
