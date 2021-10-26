@@ -12,26 +12,44 @@
         android:layout_height="300dp"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_baseline_person_outline_24"
+        app:layout_constraintStart_toStartOf="@id/join_name"
+        app:layout_constraintTop_toTopOf="@id/join_name"
+        app:layout_constraintBottom_toBottomOf="@id/join_name"
+        android:layout_marginStart="12dp"/>
+
     <EditText
         android:id="@+id/join_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="16dp"
         android:background="@drawable/input_id"
-        android:paddingLeft="10dp"
+        android:paddingLeft="44dp"
         android:hint="@string/join_name"
-        android:textSize="25sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/blank_view" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mail_off"
+        app:layout_constraintStart_toStartOf="@id/join_id"
+        app:layout_constraintTop_toTopOf="@id/join_id"
+        app:layout_constraintBottom_toBottomOf="@id/join_id"
+        android:layout_marginStart="12dp"/>
 
     <EditText
         android:id="@+id/join_id"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="16dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="44dp"
         android:background="@drawable/input_id"
         android:hint="@string/join_id"
-        android:textSize="25sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/join_name" />
 
     <TextView
@@ -45,15 +63,24 @@
         android:visibility="gone"
         android:id="@+id/error_email"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/password_off"
+        app:layout_constraintStart_toStartOf="@id/join_pw"
+        app:layout_constraintTop_toTopOf="@id/join_pw"
+        app:layout_constraintBottom_toBottomOf="@id/join_pw"
+        android:layout_marginStart="12dp"/>
+
     <EditText
         android:id="@+id/join_pw"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="16dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="44dp"
         android:background="@drawable/input_id"
         android:hint="@string/join_pw"
-        android:textSize="25sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/error_email" />
 
     <TextView
@@ -67,15 +94,24 @@
         android:visibility="gone"
         android:id="@+id/error_pw"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/password_off"
+        app:layout_constraintStart_toStartOf="@id/join_check_pw"
+        app:layout_constraintTop_toTopOf="@id/join_check_pw"
+        app:layout_constraintBottom_toBottomOf="@id/join_check_pw"
+        android:layout_marginStart="12dp"/>
+
     <EditText
         android:id="@+id/join_check_pw"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="16dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="44dp"
         android:background="@drawable/input_id"
         android:hint="@string/check_pw"
-        android:textSize="25sp"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/error_pw" />
 
     <TextView
@@ -98,7 +134,7 @@
         android:background="@drawable/join_click"
         android:backgroundTint="@color/join_color"
         android:textColor="@color/white"
-        android:text="회원가입"
-        android:textSize="25sp"
+        android:text="@string/join"
+        android:textSize="16sp"
         android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,7 +28,10 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 		binding.joinBtn.setOnClickListener {
 			if (binding.joinName.text.toString() == ""){
 				Toast.makeText(this, "이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
-			}else{
+			} else if (binding.joinPw.text.toString() == ""){
+				Toast.makeText(this, "패스워드를 입력해주세요.", Toast.LENGTH_SHORT).show()
+			}
+			else{
 				finish()
 			}
 		}
@@ -133,7 +136,6 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 			return true
 		} else {
 			binding.errorPw.visibility = View.VISIBLE
-
 			return false
 		}
 	}
