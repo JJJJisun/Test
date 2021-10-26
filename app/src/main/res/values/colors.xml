@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="id">#EAEAEA</color>
+    <!-- join  -->
+    <color name="join_color">#00D8FF</color>
+    <color name="error">#FF0000</color>
+
+    <!--  login  -->
+    <color name="naver_color">#03c75a</color>
+    <color name="kakao_color">#F7E600</color>
+    <color name="blue_40BFFF">#40BFFF</color>
 </resources>

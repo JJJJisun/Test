@@ -25,7 +25,7 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 		binding.joinPw.setOnClickListener(this)
 		binding.joinCheckPw.setOnClickListener(this)
 
-		binding.signupBtn.setOnClickListener {
+		binding.joinBtn.setOnClickListener {
 			if (binding.joinName.text.toString() == ""){
 				Toast.makeText(this, "이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
 			}else{
