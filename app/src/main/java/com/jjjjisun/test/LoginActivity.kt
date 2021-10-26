@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.jjjjisun.test.databinding.ActivityLoginBinding
 import com.nhn.android.naverlogin.OAuthLogin
-import com.nhn.android.naverlogin.OAuthLogin.mOAuthLoginHandler
 import com.nhn.android.naverlogin.OAuthLoginHandler
 
 class LoginActivity : AppCompatActivity() {
@@ -29,13 +28,15 @@ class LoginActivity : AppCompatActivity() {
         mOAuthLoginInstance = OAuthLogin.getInstance()
         mOAuthLoginInstance.init(mContext, naver_client_id, naver_client_secret, naver_client_name)
 
-        //로그인 버튼 클릭
+        //네이버로그인 버튼 클릭
         binding.btnNaverLogin.setOAuthLoginHandler(mOAuthLoginHandler)
 
-        binding.btnLogin.setOnClickListener {
+        //회원가입 클릭
+        binding.tvLogin.setOnClickListener {
             startActivity(Intent(this, JoinActivity::class.java))
         }
     }
+
 
     val mOAuthLoginHandler: OAuthLoginHandler = object : OAuthLoginHandler() {
         override fun run(success: Boolean) {
