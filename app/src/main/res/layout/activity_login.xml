@@ -125,10 +125,30 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/input_id"
         android:backgroundTint="@color/naver_color"
-        android:scaleType="fitCenter"
+        android:src="@drawable/naver_logo_g"
         app:layout_constraintTop_toBottomOf="@id/OAuth_layout" />
 
-    <Button
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="네이버로 로그인"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_naver_login"
+        app:layout_constraintEnd_toEndOf="@id/btn_naver_login"
+        app:layout_constraintStart_toStartOf="@id/btn_naver_login"
+        app:layout_constraintTop_toTopOf="@+id/btn_naver_login" />
+
+    <ImageView
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_margin="18dp"
+        android:src="@drawable/naver_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_naver_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_naver_login"
+        app:layout_constraintTop_toTopOf="@+id/btn_naver_login" />
+
+    <ImageButton
         android:id="@+id/btn_kakao_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -145,22 +165,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="카카오로 로그인"
-        android:textColor="@color/white"
+        android:textColor="@color/kakao_text"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_kakao_login"
         app:layout_constraintEnd_toEndOf="@id/btn_kakao_login"
         app:layout_constraintStart_toStartOf="@id/btn_kakao_login"
-        app:layout_constraintTop_toTopOf="@+id/btn_kakao_login"/>
+        app:layout_constraintTop_toTopOf="@+id/btn_kakao_login" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_margin="16dp"
         android:src="@drawable/kakao_logo"
-        android:layout_marginStart="12dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_kakao_login"
         app:layout_constraintStart_toStartOf="@+id/btn_kakao_login"
         app:layout_constraintTop_toTopOf="@+id/btn_kakao_login" />
-
 
     <View
         android:id="@+id/div_low"

@@ -15,7 +15,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_baseline_person_outline_24"
+        android:background="@drawable/name_off"
         app:layout_constraintStart_toStartOf="@id/join_name"
         app:layout_constraintTop_toTopOf="@id/join_name"
         app:layout_constraintBottom_toBottomOf="@id/join_name"

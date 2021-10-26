@@ -16,5 +16,7 @@
     <!--  login  -->
     <color name="naver_color">#03c75a</color>
     <color name="kakao_color">#F7E600</color>
+    <color name="kakao_text">#191919</color>
     <color name="blue_40BFFF">#40BFFF</color>
+
 </resources>
